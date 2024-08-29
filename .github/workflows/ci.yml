@@ -30,3 +30,8 @@ jobs:
           EVENT_CONTEXT: ${{ toJSON(github) }}
         run: |
           echo $EVENT_CONTEXT
+
+      - name: "get changed file"
+        run: |
+          changedFiles=$(git diff --name-only)
+          echo $changedFiles
