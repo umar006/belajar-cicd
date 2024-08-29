@@ -35,5 +35,7 @@ jobs:
 
       - name: "get changed file"
         run: |
+          echo halo bos
+          git diff --name-only | xargs
           changedFiles=$(git diff --name-only)
           echo $changedFiles
