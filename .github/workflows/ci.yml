@@ -27,6 +27,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: output env
+        env:
+          TEST_ENV_JSON: ${{ vars.TEST_ENV_JSON }}
+        run: |
+          echo $TEST_ENV_JSON > test.json
+          cat test.json
+
       - name: print-context
         env:
           EVENT_CONTEXT: ${{ toJSON(github) }}
